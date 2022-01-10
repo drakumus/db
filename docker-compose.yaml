@@ -4,6 +4,8 @@ services:
   db:
     image: mysql:latest
     restart: always
+    ports:
+      - 3654:80
     environment:
       MYSQL_ROOT_PASSWORD: notSecureChangeMe
 
@@ -11,6 +13,6 @@ services:
     image: phpmyadmin
     restart: always
     ports:
-      - 8080:80
+      - 8181:80
     environment:
       - PMA_ARBITRARY=1
